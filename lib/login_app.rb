@@ -35,4 +35,14 @@ __END__
 
 @@login
 please login
-= request.env
+%form{:method=>"post",:action=>"/login"}
+  %label username
+  %br
+  %input{:name=>"username",:type=>"password"}
+  %br
+
+  %label password
+  %br
+  %input{:name=>"password",:type=>"password"}
+
+  %input{:type=>"submit",:value=>"submit"}
