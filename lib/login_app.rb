@@ -4,7 +4,11 @@ class LoginManager < Sinatra::Base
 
   get "/" do
     # render :welcome
-    "hi"
+    username = "you're not logged in"
+    if env['warden'].authenticated?
+      username = env['warden'].user.email
+    end
+    "hi #{username}"
   end
 
   post '/unauthenticated/?' do

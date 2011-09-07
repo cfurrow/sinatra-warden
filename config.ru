@@ -11,6 +11,7 @@ $:.unshift "#{pwd}/lib"
 require 'warden_strategies'
 require 'login_app'
 require 'blog_app'
+require 'user'
 
 
 ##
