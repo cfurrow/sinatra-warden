@@ -1,21 +1,17 @@
-pwd = File.dirname(__FILE__)
+require "rubygems"
+require "bundler"
 
-## 
-$:.unshift "#{pwd}/vendor/sinatra/lib"
+Bundler.require
 require 'sinatra'
-
-$:.unshift "#{pwd}/vendor/warden/lib"
 require 'warden'
-
-## 
 require 'haml'
 
-##                
+pwd = File.dirname(__FILE__)
 $:.unshift "#{pwd}/lib"
 require 'warden_strategies'
 require 'login_app'
 require 'blog_app'
-   
+
 
 ##
 use Rack::Session::Cookie
