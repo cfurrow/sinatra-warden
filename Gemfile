@@ -1,4 +1,4 @@
 source :rubygems
-gem "sinatra"
-gem "warden"
+gem "sinatra", "1.2.6"
+gem "warden", "1.0.5"
 gem "haml"
