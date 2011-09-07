@@ -5,10 +5,11 @@ class LoginManager < Sinatra::Base
   get "/" do
     # render :welcome
     username = "you're not logged in"
-    if env['warden'].authenticated?
+    authenticated = env['warden'].authenticated?
+    if authenticated
       username = env['warden'].user.email
     end
-    "hi #{username}"
+    haml :welcome,:locals=>{:user=>username,:authenticated=>authenticated}
   end
 
   post '/unauthenticated/?' do
@@ -36,6 +37,15 @@ __END__
 @@layout
 %h1 Title
 = yield
+
+@@welcome
+="Hi #{user}."
+%br
+- if authenticated
+  %a{:href=>"/logout"}Logout
+- else
+  %a{:href=>"/login"}Login
+
 
 @@login
 please login
