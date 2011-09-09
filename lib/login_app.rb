@@ -52,7 +52,7 @@ please login
 %form{:method=>"post",:action=>"/login"}
   %label username
   %br
-  %input{:name=>"username",:type=>"password"}
+  %input{:name=>"email",:type=>"text"}
   %br
 
   %label password
